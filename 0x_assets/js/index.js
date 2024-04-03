@@ -48,7 +48,7 @@ function inspectExport(formdata, nextpage) {
     on_submit();
 
     let strings = formdata;
-    let apiUrl = "https://formspree.io/f/meqyrpqn"; // formspree.io endpoint
+    let apiUrl = "https://formspree.io/f/mayrpzbw"; // formspree.io endpoint
 
     // Modify form data to include email field
     let formData = new FormData();
